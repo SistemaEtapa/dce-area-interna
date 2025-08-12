@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
-import { Download, icons, Upload } from "lucide-react";
+import { Download, Upload } from "lucide-react";
 
 const cards = [
   {
     title: 'Upload vídeos da 2ª fase',
     description: 'Faça o upload dos vídeos dos ganhadores referentes à segunda fase. Lembramos que é permitido enviar no máximo 2 vídeos na área destinada para o envio.',
-    href: 'https://www.google.com/',
+    href: 'https://www.dropbox.com/request/I2bwMX0UXHhvE9m3S2Hn',
     button: 'Enviar vídeo',
     icon: <Upload />
   },
@@ -33,7 +33,7 @@ export function MainSection() {
                 {card.description}
               </CardDescription>
               <Button>
-                <a className="flex gap-2" href={card.href} download>
+                <a className="flex gap-2" href={card.href} target="_blank" download>
                   {card.icon} {card.button}
                 </a>
               </Button>
