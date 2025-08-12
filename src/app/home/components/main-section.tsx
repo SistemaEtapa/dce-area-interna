@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
+import { Download, icons, Upload } from "lucide-react";
 
 const cards = [
   {
@@ -7,12 +8,14 @@ const cards = [
     description: 'Faça o upload dos vídeos dos ganhadores referentes à segunda fase. Lembramos que é permitido enviar no máximo 2 vídeos na área destinada para o envio.',
     href: 'https://www.google.com/',
     button: 'Enviar vídeo',
+    icon: <Upload />
   },
   {
     title: 'Termo de Compromisso e Uso de Imagem',
     description: 'Faça o download do Termo de Compromisso e, após assinado e datado por todos os responsáveis, faça o upload do documento na área destinada para o envio.',
     href: 'DCF-Termo de Compromisso com a Integridade Acadêmica.pdf',
     button: 'Fazer download',
+    icon: <Download />
   },
 ]
 
@@ -30,8 +33,8 @@ export function MainSection() {
                 {card.description}
               </CardDescription>
               <Button>
-                <a href={card.href} download>
-                  {card.button}
+                <a className="flex gap-2" href={card.href} download>
+                  {card.icon} {card.button}
                 </a>
               </Button>
             </CardContent>
