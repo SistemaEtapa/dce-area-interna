@@ -17,6 +17,13 @@ const cards = [
     button: 'Fazer download',
     icon: <Download />
   },
+  {
+    title: 'Upload do Termo de Compromisso assinado',
+    description: 'Faça o upload do Termo de Compromisso assinado e datado por todos os responsáveis.',
+    href: 'https://www.dropbox.com/request/CCw9k6YMaGT6Vti00gG0',
+    button: 'Enviar vídeo',
+    icon: <Upload />
+  },
 ]
 
 export function MainSection() {
