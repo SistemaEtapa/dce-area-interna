@@ -28,8 +28,8 @@ const cards = [
 
 export function MainSection() {
   return (
-    <main className="max-w-300 w-4/5 mx-auto py-10">
-      <section className="grid grid-cols-4">
+    <main className="max-w-300 w-4/5 mx-auto py-10 flex flex-col-reverse md:flex-col justify-center gap-10">
+      <section className="grid justify-center gap-5 lg:grid-cols-4">
         {cards.map((card) => (
           <Card className="max-w-70" key={card.title}>
             <CardContent className="flex flex-col justify-between items-center h-full gap-5">
@@ -47,6 +47,17 @@ export function MainSection() {
             </CardContent>
           </Card>
         ))}
+      </section>
+      <section className="mx-auto w-full max-w-md md:max-w-lg">
+        <div className="relative w-4/5 md:w-1/2 h-80 md:pb-[177.78%] overflow-hidden shadow-lg mx-auto">
+          <iframe
+            src="https://player.vimeo.com/video/1107863658?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            className="absolute inset-0 h-full md:h-1/2 w-full mx-auto rounded-2xl"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            frameBorder="0"
+          />
+        </div>
       </section>
     </main>
   )
