@@ -10,10 +10,13 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true)
+
     try {
       const response = await axios.get(`https://decifra-3a9c8228edcb.herokuapp.com/professor/find/${email}`);
       
@@ -30,6 +33,8 @@ export default function Home() {
       console.log(error);
       alert("Email não encontrado")
     }
+
+    setIsSubmitting(false)
   };
 
   return (
@@ -51,8 +56,8 @@ export default function Home() {
               />
             </div>
 
-            <Button type="submit">
-              LOGIN
+            <Button disabled={isSubmitting} className="cursor-pointer" type="submit">
+              {isSubmitting ? 'Fazendo login...' : 'LOGIN'}
             </Button>
           </form>
         </CardContent>
