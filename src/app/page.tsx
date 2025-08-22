@@ -23,12 +23,9 @@ export default function Home() {
       sessionStorage.setItem("email", email);
       console.log(response);
       
-      if(response.status === 201) {
+      if(response.status === 200) {
         router.push("/home")
-      } else {
-        alert("Email não encontrado")
-      }
-      
+      } 
     } catch (error) {
       console.log(error);
       alert("Email não encontrado")
