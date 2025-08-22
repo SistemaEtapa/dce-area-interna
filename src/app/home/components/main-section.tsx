@@ -73,7 +73,7 @@ export function MainSection() {
         </Card>
       </section>
       <section className="flex justify-start gap-5">
-        <div className="relative w-4/5 pb-80 md:w-80 md:pb-250 overflow-hidden shadow-lg mx-auto">
+        <div className="relative w-4/5 pb-80 md:w-80 md:pb-250 overflow-hidden mx-auto">
           <iframe
             src="https://player.vimeo.com/video/1107863658?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
             className="absolute inset-0 h-full md:h-1/2 w-full mx-auto rounded-2xl"
@@ -82,7 +82,7 @@ export function MainSection() {
             frameBorder="0"
           />
         </div>
-        <div className="relative w-4/5 pb-80 md:w-100 md:pb-50 overflow-hidden shadow-lg mx-auto">
+        <div className="relative w-4/5 pb-80 md:w-100 md:pb-50 overflow-hidden mx-auto">
           <h2 className="text-lg xl:text-2xl font-bold">Instruções 1ª fase</h2>
           <iframe
             src="https://player.vimeo.com/video/1110394132?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
