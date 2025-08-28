@@ -21,7 +21,9 @@ export default function Home() {
       const response = await axios.get(`https://decifra-3a9c8228edcb.herokuapp.com/professor/find/${email}`);
       
       sessionStorage.setItem("email", email);
-      console.log(response);
+      sessionStorage.setItem("id", response.data.id);
+
+      console.log(response)
       
       if(response.status === 200) {
         router.push("/home")
