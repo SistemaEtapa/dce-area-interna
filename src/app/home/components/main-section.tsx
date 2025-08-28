@@ -14,7 +14,7 @@ export function MainSection() {
             <CardDescription className="text-center">
               Confira as instruções no vídeo.
 
-              Abaixo, você terá três botões de acesso às perguntas, do gabarito com a pontuação referente à cada resposta e do link para enviar a pontuação das equipes <br /><br />
+              Abaixo, você terá três botões de acesso às perguntas, e do link para enviar a pontuação das equipes <br /><br />
 
               <i>(Lembre-se que o gabarito deve ser acessado apenas pelos professores)</i>
             </CardDescription>
@@ -29,12 +29,33 @@ export function MainSection() {
                   <Download /> Fazer download do gabarito
                 </a>
               </Button>
-              <Button className="w-full">
-                <a className="flex gap-2" href="https://www.dropbox.com/request/35vX8mRdb1snBnsq0pyy" target="_blank" download>
-                  <Upload /> Enviar pontuações
-                </a>
-              </Button>
             </div>
+          </CardContent>
+        </Card>
+
+        <Card className="max-w-70">
+          <CardContent className="flex flex-col justify-between items-center h-full gap-5">
+            <CardTitle className="text-center leading-5">
+              Instruções de envio da pontuação:
+            </CardTitle>
+            <CardDescription className="text-start">
+              <ul className="space-y-2 italic">
+                <li>
+                  - Clique no botão Upload
+                </li>
+                <li>
+                  - Envie um arquivo Word, Excel ou PDF com a pontuação de cada grupo.
+                </li>
+                <li>
+                  - As pontuações podem estar em um único arquivo, desde que estejam claramente separadas por equipe.
+                </li>
+              </ul>
+            </CardDescription>
+            <Button className="w-full">
+              <a className="flex gap-2" href="https://www.dropbox.com/request/35vX8mRdb1snBnsq0pyy" target="_blank" download>
+                <Upload /> Upload
+              </a>
+            </Button>
           </CardContent>
         </Card>
 
