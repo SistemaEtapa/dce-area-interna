@@ -36,7 +36,7 @@ export function MainSection() {
         <Card className="max-w-70">
           <CardContent className="flex flex-col justify-between items-center h-full gap-5">
             <CardTitle className="text-center leading-5">
-              Instruções de envio da pontuação:
+              Instruções de envio da pontuação da 1ª fase:
             </CardTitle>
             <CardDescription className="text-start">
               <ul className="space-y-2 italic">
