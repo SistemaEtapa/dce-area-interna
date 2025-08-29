@@ -24,25 +24,32 @@ type Equipe = {
 };
 
 export function ListaDeAlunos() {
-  const email = sessionStorage.getItem("email");
+  const [email, setEmail] = useState<string | null>(null);
   const [teams, setTeams] = useState<Equipe[]>()
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const getStudents = async () => {
-    try {
-      const response = await axios.get(
-        `https://decifra-3a9c8228edcb.herokuapp.com/professor/find/${email}`
-      );
-      setTeams(response.data.equipe)
-      console.log(response.data)
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = sessionStorage.getItem("email");
+      setEmail(stored);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    getStudents()
-  }, [])
+    const getStudents = async (mail: string) => {
+      try {
+        const response = await axios.get(
+          `https://decifra-3a9c8228edcb.herokuapp.com/professor/find/${mail}`
+        );
+        setTeams(response.data.equipe as Equipe[]);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    if (email) getStudents(email);
+  }, [email]);
 
   return (
     <section className="max-w-300 w-4/5 mx-auto">
