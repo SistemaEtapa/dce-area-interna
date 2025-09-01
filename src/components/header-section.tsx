@@ -1,10 +1,14 @@
+'use client'
 import Image from "next/image";
 import LogoDecifra from '../../public/decifra-logo.png'
 import Link from "next/link";
-import { LogOut, Users } from "lucide-react";
+import { Home, LogOut, Users } from "lucide-react";
 import { Button } from "./ui/button";
+import { usePathname } from "next/navigation";
 
 export function HeaderSection() {
+  const pathname = usePathname();
+
   return (
     <header className="w-4/5 max-w-300 mx-auto py-5 flex justify-between items-center">
       <Link href={"/home"}>
@@ -13,7 +17,19 @@ export function HeaderSection() {
 
       <nav className="flex flex-col gap-2 md:gap-5 md:flex-row">
 
-        <Button asChild>
+        <Button variant={pathname === "/home" ? "outline" : "default"} asChild>
+          <Link href={"/home"} className="flex items-center gap-1">
+            <Home /> Home
+          </Link>
+        </Button>
+
+        <Button variant={pathname === "/primeira-fase" ? "outline" : "default"} asChild>
+          <Link href={"/primeira-fase"} className="flex items-center gap-1">
+            1ª Fase
+          </Link>
+        </Button>
+
+        <Button variant={pathname === "/lista-de-alunos" ? "outline" : "default"} asChild>
           <Link href={"/lista-de-alunos"} className="flex items-center gap-1">
             <Users /> Lista de alunos
           </Link>
