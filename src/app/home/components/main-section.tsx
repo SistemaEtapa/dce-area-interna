@@ -80,7 +80,7 @@ export function MainSection() {
       <section className="text-center space-y-7 mt-5">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold">Instruções 2ª fase:</h1>
-          <span className="text-gray-800">
+          <span className="text-gray-800 dark:text-gray-300">
             Peso 2, eliminatória, seleção das duas equipes que representarão a escola nas próximas fases.
           </span>
         </div>
