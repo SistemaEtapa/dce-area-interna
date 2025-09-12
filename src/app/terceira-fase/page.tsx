@@ -15,8 +15,15 @@ interface LoginInfosProps {
 
 export default function Home() {
   const [loginInfos, setLoginInfos] = useState<LoginInfosProps>()
+  const [email, setEmail] = useState<string | null>('')
 
-  const email = sessionStorage.getItem("email");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const email = sessionStorage.getItem("email");
+      setEmail(email)
+    }
+  }, []);
 
   useEffect(() => {
     const escola = logins.find((login) => {
