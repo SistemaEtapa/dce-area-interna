@@ -29,6 +29,12 @@ export function HeaderSection() {
           </Link>
         </Button>
 
+        <Button variant={pathname === "/terceira-fase" ? "outline" : "default"} asChild>
+          <Link href={"/terceira-fase"} className="flex items-center gap-1">
+           Login 3ª Fase
+          </Link>
+        </Button>
+
         <Button variant={pathname === "/lista-de-alunos" ? "outline" : "default"} asChild>
           <Link href={"/lista-de-alunos"} className="flex items-center gap-1">
             <Users /> Lista de alunos
