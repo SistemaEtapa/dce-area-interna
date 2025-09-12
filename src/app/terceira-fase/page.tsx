@@ -4,6 +4,7 @@ import { logins } from "@/lib/logins";
 import { HeaderSection } from "@/components/header-section";
 
 interface LoginInfosProps {
+  link: string | undefined;
   escola: string;
   email: string;
   equipe1: string;
@@ -34,7 +35,7 @@ export default function Home() {
           {loginInfos && (
             <div className="mx-auto flex flex-col gap-3 lg:col-span-4">
               <h2 className="text-center font-bold text-xl">Informações para login</h2>
-              <span><strong>Email:</strong> {loginInfos?.email}</span>
+              <a href={loginInfos.link} target="_blank" className="text-blue-600 underline text-center">Clique aqui para acessar o zoom</a>
               <span><strong>Equipe:</strong> {loginInfos?.equipe1} - <strong>Senha:</strong> {loginInfos?.senha1} </span>
               {loginInfos?.equipe2 && (
                 <span><strong>Equipe:</strong> {loginInfos?.equipe2} - <strong>Senha:</strong> {loginInfos?.senha2} </span>
