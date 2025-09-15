@@ -1,10 +1,61 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
+import { logins } from "@/lib/logins";
 import { Download, Upload } from "lucide-react";
+import { useEffect, useState } from "react";
+
+interface LoginInfosProps {
+  link: string | undefined;
+  escola: string;
+  email: string;
+  equipe1: string;
+  passou1: boolean;
+  senha1: string;
+  equipe2: string;
+  passou2: boolean;
+  senha2: string;
+}
 
 export function MainSection() {
+  const [loginInfos, setLoginInfos] = useState<LoginInfosProps>()
+  const [email, setEmail] = useState<string | null>('')
+
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const email = sessionStorage.getItem("email");
+      setEmail(email)
+    }
+  }, []);
+
+  useEffect(() => {
+    const escola = logins.find((login) => {
+      return login.email === email
+    })
+
+    setLoginInfos(escola)
+  }, [email])
+
+
   return (
     <main className="max-w-300 w-4/5 mx-auto py-10 flex flex-col justify-center gap-20">
+
+      <section className="grid justify-center gap-5 lg:grid-cols-4">
+
+        {loginInfos && (
+          <div className="mx-auto flex flex-col gap-3 lg:col-span-4">
+            <h2 className="text-center font-bold text-xl">Resultados 3ª fase</h2>
+            <span><strong>Equipe:</strong> {loginInfos?.equipe1} - <strong>Resultado:</strong> {loginInfos?.passou1 ? 'Passou para quarta fase 🚀' : 'Não passou para quarta fase'} </span>
+            {loginInfos?.equipe2 && (
+              <span><strong>Equipe:</strong> {loginInfos?.equipe2} - <strong>Resultado:</strong> {loginInfos?.passou2 ? 'Passou para quarta fase 🚀' : 'Não passou para quarta fase'} </span>
+            )}
+          </div>
+        )}
+
+      </section>
+
       <section className="grid justify-center gap-5 lg:grid-cols-4">
 
         <Card className="max-w-70">
@@ -77,7 +128,7 @@ export function MainSection() {
         </Card>
       </section>
 
-      <section className="text-center space-y-7 mt-5">
+      {/* <section className="text-center space-y-7 mt-5">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold">Instruções 2ª fase:</h1>
           <span className="text-gray-800 dark:text-gray-300">
@@ -90,7 +141,7 @@ export function MainSection() {
         <p className="w-4/5 mx-auto">
           Os alunos deverão elaborar um vídeo pedagógico obedecendo às instruções dos enunciados elaborados pela equipe do Sistema Etapa. Cada equipe poderá escolher a opção que considerar mais adequada, buscando criar um vídeo que seja divertido, busque provocar engajamento, mas seja rigorosamente educativo. Para isso, eles poderão usar estratégias didáticas diversas (simulação de aula, narrativa anedótica, jogos teatrais, animação, etc.). Os critérios de avaliação estão disponíveis para que cada escola possa selecionar as equipes que irão passar de fase.
         </p>
-      </section>
+      </section> */}
     </main>
   )
 }

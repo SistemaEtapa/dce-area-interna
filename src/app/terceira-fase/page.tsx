@@ -8,8 +8,10 @@ interface LoginInfosProps {
   escola: string;
   email: string;
   equipe1: string;
+  passou1: boolean;
   senha1: string;
   equipe2: string;
+  passou2: boolean;
   senha2: string;
 }
 
@@ -41,11 +43,10 @@ export default function Home() {
 
           {loginInfos && (
             <div className="mx-auto flex flex-col gap-3 lg:col-span-4">
-              <h2 className="text-center font-bold text-xl">Informações para login</h2>
-              <a href={loginInfos.link} target="_blank" className="text-blue-600 underline text-center">Clique aqui para acessar o zoom</a>
-              <span><strong>Equipe:</strong> {loginInfos?.equipe1} - <strong>Senha:</strong> {loginInfos?.senha1} </span>
+              <h2 className="text-center font-bold text-xl">Resultados 3ª fase</h2>
+              <span><strong>Equipe:</strong> {loginInfos?.equipe1} - <strong>Resultado:</strong> {loginInfos?.passou1 ? 'Passou para quarta fase 🚀' : 'Não passou para quarta fase'} </span>
               {loginInfos?.equipe2 && (
-                <span><strong>Equipe:</strong> {loginInfos?.equipe2} - <strong>Senha:</strong> {loginInfos?.senha2} </span>
+                <span><strong>Equipe:</strong> {loginInfos?.equipe2} - <strong>Resultado:</strong> {loginInfos?.passou2 ? 'Passou para quarta fase' : 'Não passou para quarta fase'} </span>
               )}
             </div>
           )}
