@@ -221,7 +221,7 @@ export const logins = [
   },
   {
     escola: "CENTRO EDUCACIONAL CRISTÃO",
-    email: "GUILHERMECARMELLO@COLEGIOCEDUC.COM.BR",
+    email: "guilhermecarmello@colegioceduc.com.br",
     equipe1: "The Thundermans- C E. CRISTÃO",
     passou1: true,
     senha1: "kl11",
