@@ -46,11 +46,10 @@ export default function Home() {
               <h2 className="text-center font-bold text-xl">Resultados 3ª fase</h2>
               <span><strong>Equipe:</strong> {loginInfos?.equipe1} - <strong>Resultado:</strong> {loginInfos?.passou1 ? 'Passou para quarta fase 🚀' : 'Não passou para quarta fase'} </span>
               {loginInfos?.equipe2 && (
-                <span><strong>Equipe:</strong> {loginInfos?.equipe2} - <strong>Resultado:</strong> {loginInfos?.passou2 ? 'Passou para quarta fase' : 'Não passou para quarta fase'} </span>
+                <span><strong>Equipe:</strong> {loginInfos?.equipe2} - <strong>Resultado:</strong> {loginInfos?.passou2 ? 'Passou para quarta fase 🚀' : 'Não passou para quarta fase'} </span>
               )}
             </div>
           )}
-
         </section>
       </main>
     </>

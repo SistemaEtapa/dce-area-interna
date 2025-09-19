@@ -29,11 +29,17 @@ export function HeaderSection() {
           </Link>
         </Button>
 
-        {/* <Button variant={pathname === "/terceira-fase" ? "outline" : "default"} asChild>
+        <Button variant={pathname === "/segunda-fase" ? "outline" : "default"} asChild>
+          <Link href={"/segunda-fase"} className="flex items-center gap-1">
+            2ª Fase
+          </Link>
+        </Button>
+
+        <Button variant={pathname === "/terceira-fase" ? "outline" : "default"} asChild>
           <Link href={"/terceira-fase"} className="flex items-center gap-1">
            3ª Fase
           </Link>
-        </Button> */}
+        </Button>
 
         <Button variant={pathname === "/lista-de-alunos" ? "outline" : "default"} asChild>
           <Link href={"/lista-de-alunos"} className="flex items-center gap-1">
